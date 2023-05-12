@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+
+  web_qr:
+    restart: unless-stopped
+    networks:
+      - konecta_network
+    image: 'titodelta/php_image:v1'
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1024m"
+        max-file: "3"
+    volumes:
+      - $PWD/:/var/www/html/qr/
+      - $PWD/docker-volume/apache/security.conf:/etc/apache2/conf-enabled/security.conf
+    command: bash -c "
+      cd qr &&
+      echo 'Compose Install' &&
+      composer install &&
+      echo 'Compose Update' &&
+      composer update &&
+      a2enmod headers &&
+      a2enmod http2 &&
+      apache2-foreground"
+  
+
+networks:
+  konecta_network:
+    external: true
