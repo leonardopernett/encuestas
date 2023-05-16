@@ -1,0 +1,51 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+   .preload {
+      width: 30px;
+      height: 30px;
+      border:4px dotted white;
+      border-left-color: blue;
+      border-radius: 50%;
+      animation: spin 1.5s linear infinite;
+   }
+   @keyframes spin {
+     0% {
+       transform: rotate(0deg);
+     }
+
+     100% {
+       transform: rotate(356deg);
+     }
+   }
+   .flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+   }
+</style>
+<body>
+  
+
+
+  <div class="flex">
+    <h4>Experience learning</h4>
+    <div class="preload"></div>
+    <p>cargando...</p>
+  </div>
+
+
+</body>
+</html>
