@@ -7,6 +7,7 @@ use App\Http\Controllers\web\QrController;
 use App\Http\Controllers\web\SolicitudController;
 use App\Http\Controllers\web\EncuestasController;
 use App\Http\Controllers\web\RespuestasController;
+use App\Http\Controllers\web\RespuestasrutakController;
 use Illuminate\Support\Facades\Session;
 
 
@@ -48,3 +49,9 @@ Route::get('/encuestas', function(){
 Route::post('/encuestas', [EncuestasController::class,'index'])->name('encuestas');
 
 Route::post('/respuestas', [RespuestasController::class,'resp'])->name('respuestas');
+/*ENCUESTA RUTAK */
+Route::get('/encuestas', function(){
+    return view('web.encuesta_rutak');
+});
+Route::post('/encuestas', [EncuestasController::class,'index'])->name('encuestas');
+Route::post('/respuestas_rutask', [RespuestasrutakController::class,'respk'])->name('respuestas_rutask');

@@ -44,7 +44,7 @@ height: 100%;
         <form action="{{ route('encuestas') }}" method="POST" >
           @csrf
           <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-            <p class="lead fw-normal mb-0 me-3"><b>Encuesta Konecta</b></p>
+            <p class="lead fw-normal mb-0 me-3"><b>Encuestas rutas K Konecta</b></p>
           </div>
 
           <div class="divider d-flex align-items-center my-4">
@@ -62,7 +62,7 @@ height: 100%;
             </small>
             @enderror
           </div>
-          <input value="basic" name="tipo_encuesta" type="hidden">
+          <input value="rutak" name="tipo_encuesta" type="hidden">
           <div class="text-center text-lg-start mt-4 pt-2">
             <button style="background-color: #002856;" class="btn btn-primary btn-lg"
               style="padding-left: 2.5rem; padding-right: 2.5rem;">Ingresar</button>           

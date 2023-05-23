@@ -23,9 +23,11 @@ class EncuestasController extends Controller
       if(empty($users)){
         session()->flash('message','');
         return back()->with('message', 'user is nos register');
-      }
-
-      return view('web.encuestas_preguntas',["user"=>$users[0]]);
+      }     
+      if($request->tipo_encuesta=='basic')
+        return view('web.encuestas_preguntas',["user"=>$users[0]]);
+      else
+        return view('web.preguntas_rutask',["user"=>$users[0]]);
     }
 
     public function store(){
